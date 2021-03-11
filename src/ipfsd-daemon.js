@@ -103,7 +103,7 @@ class Daemon {
     }
 
     // Translate ipfs options to cli args
-    if (opts.bits) {
+    if (opts.bits && this.opts.type !== 'rust') {
       args.push('--bits', opts.bits)
     }
     if (opts.pass && this.opts.type === 'js') {
