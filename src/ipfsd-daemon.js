@@ -249,6 +249,7 @@ class Daemon {
 
     try {
       await this.api.stop()
+      await this.subprocess;
     } catch (err) {
       if (!killed) {
         throw err // if was killed then ignore error
